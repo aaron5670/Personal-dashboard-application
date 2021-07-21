@@ -1,7 +1,6 @@
 import 'package:admin/models/MyFiles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../../constants.dart';
 
 class FileInfoCard extends StatelessWidget {
@@ -57,14 +56,16 @@ class FileInfoCard extends StatelessWidget {
             children: [
               Text(
                 "${info.numOfFiles} Files",
-                style: Theme.of(context)
+                style: Theme
+                    .of(context)
                     .textTheme
                     .caption!
                     .copyWith(color: Colors.white70),
               ),
               Text(
                 info.totalStorage!,
-                style: Theme.of(context)
+                style: Theme
+                    .of(context)
                     .textTheme
                     .caption!
                     .copyWith(color: Colors.white),
@@ -100,14 +101,15 @@ class ProgressLine extends StatelessWidget {
           ),
         ),
         LayoutBuilder(
-          builder: (context, constraints) => Container(
-            width: constraints.maxWidth * (percentage! / 100),
-            height: 5,
-            decoration: BoxDecoration(
-              color: color,
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-          ),
+          builder: (context, constraints) =>
+              Container(
+                width: constraints.maxWidth * (percentage! / 100),
+                height: 5,
+                decoration: BoxDecoration(
+                  color: color,
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+              ),
         ),
       ],
     );
